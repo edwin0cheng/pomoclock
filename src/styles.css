@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'ArialRounded';
+  font-display: swap;
+  src: url('assets/fonts/Arial_Rounded_MT.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ArialRounded';
+  font-display: swap;
+  src: url('assets/fonts/Arial-Rounded-MT-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+:root {
+  font-family: 'ArialRounded',  Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  background-color: #BA4949;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.clock-panel {
+  width: 500px;
+  background-color: #C15C5C;
+  /* center the panel */
+  margin: 0 auto;  
+}
+
+.clock {
+  font-weight: 700;
+  color: #FFFFFF;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  justify-content: center;
+}
+
+#clock-timer {
+  font-size: min(170px, 15vw);
+}
+
+/* Responsive font sizes for different screen sizes */
+@media (max-width: 768px) {
+  #clock-timer {
+    font-size: min(120px, 18vw);
+  }
+  
+  .clock-panel {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .clock-btn {
+    font-size: 0.7rem;
+     padding: 0.5em 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  #clock-timer {
+    font-size: min(80px, 20vw);
+  }
+  
+  .clock-btn {
+    font-size: 1rem;
+    padding: 0.2em 0.2em;
+    margin: 0 4px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #clock-timer {
+    font-size: min(200px, 12vw);
+  }
+  
+  .clock-panel {
+    width: 600px;
+  }
+
+  .clock-btn {
+     padding: 0.5em 1.2em;
+  }
+}
+
+.clock-btn {
+  margin: 0 8px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background: #fff2;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clock-btn:hover {
+  background: #fff4;
+}
+
+.clock-controls {
+  padding-bottom: 1em;
+}
+
+/* Break mode styles */
+body.break-mode {
+  background-color: #8888ee;
+}
+
+body.break-mode .clock-panel {
+  background-color: #aaaaee;
+}
