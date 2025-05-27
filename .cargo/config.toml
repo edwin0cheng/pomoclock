@@ -1,0 +1,4 @@
+[env]
+# See https://github.com/tauri-apps/tauri/issues/8929#issuecomment-1956338150
+# But this does not work with `cargo tauri dev` ??!!
+NO_STRIP = "true"

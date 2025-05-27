@@ -20,6 +20,12 @@ let default_settings = {
 
 let timeRemaining = default_settings[mode].work_duration;
 
+function notify(message) {
+  invoke("notify", { "text" : message })
+    .then(() => console.log("Notification sent:", message))
+    .catch(err => console.error("Failed to send notification:", err));
+}
+
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const secs = seconds % 60;
@@ -52,9 +58,11 @@ function startTimer() {
       if (currentSession === "work") {
         currentSession = "short_break";
         timeRemaining = default_settings[mode].short_break_duration;
+        notify("Time for a break!");
       } else {
         currentSession = "work";
         timeRemaining = default_settings[mode].work_duration;
+        notify("Time to get back to work!");
       }
       updateDisplay();
       // Continue running the timer for the next session      
