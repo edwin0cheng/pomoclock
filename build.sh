@@ -7,3 +7,8 @@ if [ $? -ne 0 ]; then
 fi
 
 cp src-tauri/target/release/bundle/appimage/*.AppImage .
+name=$(basename *.AppImage)
+
+# install it in .local/bin
+ln -sf "$(pwd)/$name" ~/.local/bin/pomoclock.AppImage
+
