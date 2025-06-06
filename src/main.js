@@ -35,10 +35,10 @@ function formatTime(seconds) {
 function updateDisplay() {
   clockTimerEl.textContent = formatTime(timeRemaining);
   if (currentSession === "work") {
-    nextBtnEl.textContent = "Work";
+    nextBtnEl.textContent = "Break";
     document.body.classList.remove("break-mode");
   } else {
-    nextBtnEl.textContent = "Break";
+    nextBtnEl.textContent = "Work";
     document.body.classList.add("break-mode");
   }
 }
